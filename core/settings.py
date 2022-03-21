@@ -1,3 +1,4 @@
+from email.policy import default
 import os
 from pathlib import Path
 import django_heroku
@@ -11,7 +12,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env("SECRET_KEY")
 
-DEBUG =  False
+DEBUG = env('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['zakharkevichdev.herokuapp.com']
 
@@ -43,7 +44,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['blog/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
