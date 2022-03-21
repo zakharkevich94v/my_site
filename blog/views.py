@@ -70,3 +70,7 @@ def contact_me(request):
                 return render(request, 'blog/messages/message-error.html')
     else:
         return render(request, 'blog/index.html')
+
+
+def page_not_found_view(request, exception):
+    return render(request, 'blog/404.html', status=404)
