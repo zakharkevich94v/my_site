@@ -75,13 +75,13 @@ def contact_me(request):
 
 def e_handler404(request):
     context = RequestContext(request)
-    response = render('error404.html', context)
+    response = render('blog/404.html', context)
     response.status_code = 404
     return response
  
  
 def e_handler500(request):
     context = RequestContext(request)
-    response = render('error500.html', context)
+    response = render('500.html', context)
     response.status_code = 500
     return response
