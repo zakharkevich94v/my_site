@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from django.conf import settings
 from django.views.generic import ListView, DetailView
 from .forms import ContactForm
@@ -6,7 +6,6 @@ from .models import Person, Works
 from django.db.models import F
 from django.core.mail import send_mail
 from django.template import RequestContext
-
 
 class HomeView(ListView):
     model = Person
@@ -73,15 +72,16 @@ def contact_me(request):
         return render(request, 'blog/index.html')
 
 
+
 def e_handler404(request):
     context = RequestContext(request)
-    response = render_to_response('error404.html', context)
+    response = render('error404.html', context)
     response.status_code = 404
     return response
  
  
 def e_handler500(request):
     context = RequestContext(request)
-    response = render_to_response('error500.html', context)
+    response = render('error500.html', context)
     response.status_code = 500
     return response
