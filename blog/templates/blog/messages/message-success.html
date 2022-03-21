@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}success{% endblock %}
+{% block content %}
+    <h1 class="page__title">Your message has been sent!</h1>
+    <a class="btn btn--blue btn--rounded btn--sm" href="{% url 'home' %}">Back</a>
+{% endblock %}

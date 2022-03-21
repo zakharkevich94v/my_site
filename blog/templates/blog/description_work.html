@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ about_work.title }}{% endblock %}
+{% block content %}
+    {% if not about_work %}
+        <h1 class="page__title">There are currently no work active</h1>
+        <a class="btn btn--blue btn--rounded btn--sm" href="{% url 'home' %}">Back</a>
+    {% else %}
+        <article class="post">
+            <div class="post__actions">
+                <a href="{% url 'works' %}">Previous page</a>                
+            </div>
+            <br>
+            <div class="post__header  post__header--open">
+                <h1 class="post__title  post__title--open">{{ about_work.title }}</h1>
+            </div>
+            <div class="post__content">
+                <div class="post__text">
+                    <h4>Description</h4>
+                    <p>{{ about_work.description|linebreaks }}</p>                                         
+                    <table>
+                        <tr>
+                            {% for pic in about_work.screenshots.all %} 
+                                <td><img src="{{ pic.image.url }}" alt=""></td>                         
+                            {% endfor %}                        
+                        </tr>
+                    </table>                        
+                </div>
+                <div class="sidebar__footer">
+                    <a href="{{ about_work.link_source_code }}" class="btn  btn--blue  btn--rounded  btn--sm">Source code</a>
+                    <a href="{{ about_work.link_webpage }}" class="btn  btn--blue  btn--rounded  btn--sm">Webpage</a>
+                </div>                
+            </div>
+            <br>
+            <div class="post__actions">
+                <a href="{% url 'works' %}">Previous page</a>                
+            </div>
+        </article>
+    {% endif %}
+{% endblock %}

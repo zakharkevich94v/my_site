@@ -1,0 +1,34 @@
+{% load static %}
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar__header">
+        <img src="{% static 'images/sidebar-header.jpg' %}" alt="">
+    </div>
+
+    <div class="sidebar__content">
+        <div class="profile">            
+            <div class="profile__header">
+                <div class="profile__name">Vadim Zakharkevich</div>
+                <div class="profile__prof">Python Developer</div>
+            </div>            
+
+            <div class="profile__text">
+                <p>Hello! My name is Vadim. I am a Python developer. I am very passionate and dedicated to my work. Practice of site layout. I have been creating websites since 2019. I have acquired the skills and knowledge necessary for the success of your project.</p>
+            </div>
+        </div>
+        
+        <nav class="nav  nav--mobile">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="{% url 'works' %}">Works</a>
+                </li>                
+            </ul>
+        </nav>
+    </div>
+    <div class="sidebar__footer">
+        <a class="btn  btn--red" href="{% url 'works' %}">My works</a>
+        <button class="btn  btn--blue" type="button" data-modal="contact-modal">Write me</button>
+    </div>
+</aside>
