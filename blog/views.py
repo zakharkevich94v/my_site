@@ -5,7 +5,7 @@ from .forms import ContactForm
 from .models import Person, Works
 from django.db.models import F
 from django.core.mail import send_mail
-from django.template import RequestContext
+
 
 class HomeView(ListView):
     model = Person
