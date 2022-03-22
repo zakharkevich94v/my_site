@@ -1,7 +1,7 @@
 import dj_database_url
 import os
 from pathlib import Path
-import django_heroku
+# import django_heroku
 import environ
 
 
@@ -142,7 +142,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS', cast=bool)
 EMAIL_USE_SSL = env('EMAIL_USE_SSL', cast=bool)
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
