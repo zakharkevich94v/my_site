@@ -14,7 +14,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['zakharkevichdev']
+ALLOWED_HOSTS = ['https://zakharkevichdev.herokuapp.com/']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
