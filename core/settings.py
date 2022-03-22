@@ -108,6 +108,9 @@ USE_I18N = True
 
 USE_TZ = True
 
+ADMINS = [
+    ('Vadim', 'zakharkevich.v@gmail.com'),
+]
 
 STATIC_URL = '/static/'
 
