@@ -14,7 +14,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = env('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['zakharkevichdev.herokuapp.com']
+ALLOWED_HOSTS = ['zakharkevichdev']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,7 +44,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'blog/'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
