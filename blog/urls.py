@@ -15,3 +15,7 @@ urlpatterns = [
     path('works/<str:slug>/', WorksByCategoryView.as_view(), name='works-by-category'), 
     path('contact/', contact_me, name='contact-me'),   
 ]
+
+
+
+handler404 = "blog.views.page_not_found_view"
