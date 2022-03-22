@@ -14,7 +14,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', '.herokuapp.com']
+ALLOWED_HOSTS = ['*', 'zakharkevichdev.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -109,7 +109,7 @@ USE_I18N = True
 USE_TZ = True
 
 ADMINS = [
-    ('Vadim', 'zakharkevich.v@gmail.com'),
+    ('', env('EMAIL_HOST_USER')),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
