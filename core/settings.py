@@ -1,4 +1,4 @@
-from email.policy import default
+import dj_database_url
 import os
 from pathlib import Path
 import django_heroku
@@ -14,7 +14,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -136,3 +136,6 @@ EMAIL_USE_TLS = env('EMAIL_USE_TLS', cast=bool)
 EMAIL_USE_SSL = env('EMAIL_USE_SSL', cast=bool)
 
 django_heroku.settings(locals())
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
