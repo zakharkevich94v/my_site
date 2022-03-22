@@ -111,7 +111,8 @@ USE_TZ = True
 ADMINS = [
     ('', env('EMAIL_HOST_USER')),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = '/static/'
 
