@@ -73,15 +73,5 @@ def contact_me(request):
 
 
 
-def e_handler404(request):
-    context = RequestContext(request)
-    response = render('blog/404.html', context)
-    response.status_code = 404
-    return response
- 
- 
-def e_handler500(request):
-    context = RequestContext(request)
-    response = render('500.html', context)
-    response.status_code = 500
-    return response
+def page_not_found_view(request, exception):
+    return render(request, 'blog/404.html', status=404)
