@@ -74,4 +74,4 @@ def contact_me(request):
 
 
 def page_not_found_view(request, exception):
-    return render(request, 'blog/404.html', status=404)
+    return render(request, 'blog/error_pages/404.html', status=404)
