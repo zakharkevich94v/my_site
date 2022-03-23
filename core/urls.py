@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from blog.views import page_not_found_view
+from blog.views import page_not_found_view, server_error_view
 
 
 urlpatterns = [
@@ -16,3 +16,4 @@ if settings.DEBUG:
 
 
 handler404 = page_not_found_view
+handler500 = server_error_view

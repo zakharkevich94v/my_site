@@ -1,10 +1,10 @@
 {% extends 'blog/error_pages/errors.html' %}
-{% block title %}Error 404{% endblock %}
+{% block title %}Error 500{% endblock %}
 {% block content %}
 <br>
 <center>
-    <h1>Error 404</h1>
-    <p>Page not found...</p><br>
+    <h1>Error 500</h1>
+    <p>Server error...</p><br>
     <a href="{% url 'home' %}">Go back to the normal page</a>
 </center>
 {% endblock %}
