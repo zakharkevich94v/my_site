@@ -1,8 +1,7 @@
-import dj_database_url
 import os
 from pathlib import Path
-# import django_heroku
 import environ
+import dj_database_url
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,7 +13,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'zakharkevichdev.herokuapp.com']
+ALLOWED_HOSTS = ['zakharkevichdev.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,8 +58,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': env('DATABASE_ENGINE'),
@@ -71,13 +68,6 @@ DATABASES = {
         'PORT': '',
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
@@ -112,22 +102,14 @@ ADMINS = [
     ('', 'zakharkevich.v@gmail.com'),
 ]
 
-# STATIC_ROOT = BASE_DIR / "staticfiles"
-# STATIC_URL = 'static/'
-
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
 STATIC_ROOT = BASE_DIR / "static"
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 MEDIA_URL = 'media/'
 
@@ -135,12 +117,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-
-# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# WHITENOISE_USE_FINDERS = True
-
 
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_PORT = env('EMAIL_PORT', cast=int)
@@ -148,8 +125,6 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS', cast=bool)
 EMAIL_USE_SSL = env('EMAIL_USE_SSL', cast=bool)
-
-# django_heroku.settings(locals())
 
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
