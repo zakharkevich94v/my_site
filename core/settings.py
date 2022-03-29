@@ -75,6 +75,10 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': env('CLOUDINARY_API_SECRET')
 }
 
+ADMINS = (
+    ('Vadim', env('EMAIL_HOST_USER')),
+)
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
